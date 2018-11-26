@@ -3,11 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-<<<<<<< HEAD
-        applicationId "com.example.a2.pp"
-=======
-        applicationId "com.example.samsung.myapplication"
->>>>>>> 커밋 테스트
+        applicationId "com.example.chosun.myapplication"
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
