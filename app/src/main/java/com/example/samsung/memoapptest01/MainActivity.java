@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 mTextFileManager.save(memoData);
                 mMemoEdit.setText("");
 
-                Toast.makeText(this, "저장 완료!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "저장 완료", Toast.LENGTH_LONG).show();
                 break;
             }
 
