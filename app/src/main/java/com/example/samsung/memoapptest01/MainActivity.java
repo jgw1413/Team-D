@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 String memoData = mTextFileManager.load();
                 mMemoEdit.setText(memoData);
 
-                Toast.makeText(this, "불러오기 완료!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "불러오기 완료!!", Toast.LENGTH_LONG).show();
                 break;
             }
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 mTextFileManager.save(memoData);
                 mMemoEdit.setText("");
 
-                Toast.makeText(this, "저장 완료!", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "저장 완료!!", Toast.LENGTH_LONG).show();
                 break;
             }
 
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 mTextFileManager.delete();
         mMemoEdit.setText("");
 
-        Toast.makeText(this, "삭제 완료!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "삭제 완료!!", Toast.LENGTH_LONG).show();
         }
         }
         }
