@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/str_menu"
+        android:id="@+id/btn_menu"/>
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/str_save"
+        android:id="@+id/btn_save"
+        android:layout_toLeftOf="@id/btn_menu"/>
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/et_filename"
+        android:layout_above="@id/btn_menu"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:text="@string/str_filename"
+        android:id="@+id/tv_filename"
+        android:layout_above="@id/et_filename"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:text="@string/str_editmemo"
+        android:id="@+id/tv_editmemo"
+        android:layout_alignParentTop="true"/>
+
+    <EditText
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:id="@+id/et_edit"
+        android:layout_above="@id/tv_filename"
+        android:scrollHorizontally="true"
+        android:scrollbars="vertical"
+        android:layout_below="@id/tv_editmemo"/>
+
+</RelativeLayout>
