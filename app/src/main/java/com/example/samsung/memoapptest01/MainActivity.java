@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText mMemoEdit = null;
+    EditText mmMemoEdit = null;
     TextFileManager mTextFileManager = new TextFileManager(this);
 
     @Override
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mMemoEdit = (EditText) findViewById(R.id.memo_edit);
+        mmMemoEdit = (EditText) findViewById(R.id.memo_edit);
     }
 
     public void onClick(View v) {
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             // 1. 파일에 저장된 메모 텍스트 파일 불러오기
             case R.id.load_btn: {
                 String memoData = mTextFileManager.load();
-                mMemoEdit.setText(memoData);
+                mmMemoEdit.setText(memoData);
 
                 Toast.makeText(this, "불러오기 완료함!", Toast.LENGTH_LONG).show();
                 break;
