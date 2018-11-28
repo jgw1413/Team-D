@@ -1,4 +1,4 @@
-package com.example.samsung.memoapptest01;
+package com.example.administrator.simplememo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.samsung.memoapptest01", appContext.getPackageName());
+        assertEquals("com.example.administrator.simplememo", appContext.getPackageName());
     }
 }
