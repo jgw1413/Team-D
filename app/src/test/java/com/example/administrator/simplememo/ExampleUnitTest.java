@@ -1,4 +1,4 @@
-package com.example.samsung.memoapptest01;
+package com.example.administrator.simplememo;
 
 import org.junit.Test;
 
