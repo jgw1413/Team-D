@@ -24,30 +24,34 @@
         android:orientation="vertical">
 
         <Button
-            android:layout_height="wrap_content"
-            android:layout_width="100dip"
-            android:layout_gravity="center"
-            android:text="@string/str_new"
             android:id="@+id/btn_new"
-            android:textStyle="bold"
-            android:textColor="#58c1b6"/>
-
-        <Button android:layout_height="wrap_content"
             android:layout_width="100dip"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/str_open"
-            android:id="@+id/btn_open"
-            android:textStyle="bold"
-            android:textColor="#58c1b6"/>
+            android:onClick="mOnClick"
+            android:text="@string/str_new"
+            android:textColor="#58c1b6"
+            android:textStyle="bold" />
 
         <Button
-            android:layout_height="wrap_content"
+            android:id="@+id/btn_open"
             android:layout_width="100dip"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/str_exit"
+            android:onClick="mOnClick"
+            android:text="@string/str_open"
+            android:textColor="#58c1b6"
+            android:textStyle="bold" />
+
+        <Button
             android:id="@+id/btn_exit"
-            android:textStyle="bold"
-            android:textColor="#58c1b6"/>
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="mOnClick"
+            android:text="@string/str_exit"
+            android:textColor="#58c1b6"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </LinearLayout>
