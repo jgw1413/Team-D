@@ -47,10 +47,10 @@ public class Edit extends Activity implements Variable {
             @Override
             public void onClick(View v) {
                 switch(v.getId()){
-                    case R.id.btn_save:
+                    case R.id.btn_save:     // 저장하기
                         SaveProc();
                         break;
-                    case R.id.btn_menu:
+                    case R.id.btn_menu:     // 메인으로 돌아가기
 //		        	finish();
                         Intent intent = new Intent(Edit.this, Memo.class);
                         startActivity(intent);
@@ -60,44 +60,44 @@ public class Edit extends Activity implements Variable {
         });
     }
 
-    public void SaveProc(){
+    public void SaveProc() {        // 파일이름 검사 함수
         EditText et = (EditText)findViewById(R.id.et_filename);
         String getFileName = et.getText().toString();
 
-        if(getFileName.equals("")) {             // 아무것도 안적고 세이브 했을 때
+        if(getFileName.equals("")) {             // 파일이름 않적었을 때
             Intent intent = new Intent(Edit.this, Message.class);
             intent.putExtra("MESSAGE", NO_NAME);
             startActivity(intent);
         }
-        else {      // 한글자라도 적었을 때
-            int iFileLeng = fileList().length;
+        else {      // 파일이름 적었을 때
+            int iFileLeng = fileList().length;      // 적은 문자의 길이를 넘겨줌
 
-            if( iFileLeng != 0 ) {
+            if( iFileLeng != 0 ) {      // 문자 길이가 0이 아닐 때
                 boolean isAlreadyFile = false;
                 String[] sFileList = fileList();
-                for(int i = 0 ; i < iFileLeng ; i++) {
+                for(int i = 0 ; i < iFileLeng ; i++) {      // 같은 이름의 파일이 존재하는지 비교
                     if( sFileList[i].equals(getFileName) ) {
                         isAlreadyFile = true;
                         break;
                     }
                 }
 
-                if(isAlreadyFile) {
+                if(isAlreadyFile) {     // 같은 이름의 파일이 존재 할 때
                     Intent intent = new Intent(Edit.this, Message.class);
                     intent.putExtra("MESSAGE", ALREADY_FILE);
-                    startActivity(intent);
+                    startActivity(intent);      // 파일 저장 안하고 메세지 인텐트만 띄움
                 }
-                else {
-                    FileSave(getFileName);
+                else {      // 같은 이름의 파일 없을 때
+                    FileSave(getFileName);      // 파일 저장
                 }
             }
-            else {
-                FileSave(getFileName);
+            else {      // 아무 문자도 안썻을 때
+                FileSave(getFileName);      // 파일 저장
             }
         }
     }
 
-    public void FileSave(String sName) {
+    public void FileSave(String sName) {        // 파일저장 함수
         try {
             EditText et = (EditText)findViewById(R.id.et_edit);
             byte[] buffer = stringToByte(et.getText().toString());
@@ -119,7 +119,6 @@ public class Edit extends Activity implements Variable {
             finish();
         }
     }
-
 
     public byte[] stringToByte(String sBuffer) {
         byte[] bBuffer = new byte[sBuffer.length()];

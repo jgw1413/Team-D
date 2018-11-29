@@ -40,7 +40,7 @@ public class Memo extends Activity {
                         startActivity(intent);
                         break;
                     case R.id.btn_exit:     // 앱 종료
-                       // finish();
+                        finish();
                         break;
                 }
             }

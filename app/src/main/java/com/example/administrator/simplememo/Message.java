@@ -24,17 +24,17 @@ public class Message extends Activity implements Variable{
 
         String sMsg = "";
 
-        switch(getValue){       // 세이브 눌렀을 때
-            case NO_NAME:
+        switch(getValue){       // 버튼 눌렀을 때 메세지 종류
+            case NO_NAME:            // 파일 이름 안적음
                 sMsg="Empty file name.";
                 break;
-            case ALREADY_FILE:
+            case ALREADY_FILE:      // 똑같은 파일 이름 존재
                 sMsg="The file has the same name.";
                 break;
-            case SAVE_COMPLETE:
+            case SAVE_COMPLETE:     // 파일 저장 완료
                 sMsg="Save Complete.";
                 break;
-            case DEL_COMPLETE:
+            case DEL_COMPLETE:      // 파일 삭제 완료
                 sMsg=intent.getStringExtra("DEL_OK")+" file DEL Complete.";
                 break;
         }
@@ -42,8 +42,8 @@ public class Message extends Activity implements Variable{
         tv.setText(sMsg);
 
         okBtn = (Button)findViewById(R.id.btn_warningOk);
-        okBtn.setOnClickListener(new OnClickListener(){
 
+        okBtn.setOnClickListener(new OnClickListener(){     // 각 버튼 클릭 했을 때 이벤트
             @Override
             public void onClick(View v) {
                 switch(getValue){
