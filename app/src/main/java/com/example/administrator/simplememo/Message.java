@@ -24,8 +24,7 @@ public class Message extends Activity implements Variable{
 
         String sMsg = "";
 
-
-        switch(getValue){
+        switch(getValue){       // 세이브 눌렀을 때
             case NO_NAME:
                 sMsg="Empty file name.";
                 break;
@@ -59,13 +58,7 @@ public class Message extends Activity implements Variable{
                         finish();
                         break;
                 }
-
             }
-
         });
-
     }
-
-
-
 }

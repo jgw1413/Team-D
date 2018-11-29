@@ -13,6 +13,7 @@ public class Memo extends Activity {
     /** Called when the activity is first created. */
     Button btn = null;
     Intent intent = null;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +22,6 @@ public class Memo extends Activity {
         ButtonProc(R.id.btn_new);
         ButtonProc(R.id.btn_open);
         ButtonProc(R.id.btn_exit);
-
     }
 
     public void ButtonProc(final int id){
@@ -30,17 +30,17 @@ public class Memo extends Activity {
             @Override
             public void onClick(View v) {
                 switch(v.getId()){
-                    case R.id.btn_new:
+                    case R.id.btn_new:      // 작성 화면으로 이동 Edit
                         intent = new Intent(Memo.this, Edit.class);
                         intent.putExtra("isOpenEdit", false);
                         startActivity(intent);
                         break;
-                    case R.id.btn_open:
+                    case R.id.btn_open:     // 리스트 화면으로 이동 OpenList
                         intent = new Intent(Memo.this, OpenList.class);
                         startActivity(intent);
                         break;
-                    case R.id.btn_exit:
-                        finish();
+                    case R.id.btn_exit:     // 앱 종료
+                       // finish();
                         break;
                 }
             }
