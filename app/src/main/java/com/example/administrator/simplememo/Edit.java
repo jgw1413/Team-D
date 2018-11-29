@@ -63,12 +63,13 @@ public class Edit extends Activity implements Variable {
     public void SaveProc(){
         EditText et = (EditText)findViewById(R.id.et_filename);
         String getFileName = et.getText().toString();
+
         if(getFileName.equals("")) {             // 아무것도 안적고 세이브 했을 때
             Intent intent = new Intent(Edit.this, Message.class);
             intent.putExtra("MESSAGE", NO_NAME);
             startActivity(intent);
         }
-        else {
+        else {      // 한글자라도 적었을 때
             int iFileLeng = fileList().length;
 
             if( iFileLeng != 0 ) {
