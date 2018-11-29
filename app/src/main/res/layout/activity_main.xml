@@ -13,7 +13,7 @@
         android:layout_gravity="center"
         android:textColorHighlight="#00ff00"
         android:textColor="#80b447"
-        android:textSize="25dip"
+        android:textSize="26dp"
         android:text="@string/str_title"
         android:layout_marginTop="20dip"
         android:textStyle="bold"/>
