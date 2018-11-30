@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-    android:layout_height="fill_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#fffbf4">
+    android:layout_height="fill_parent"
+    android:background="#fffbf4"
+    android:padding="10dp">
 
     <Button
-        android:layout_height="wrap_content"
+        android:id="@+id/btn_menu"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:background="@drawable/btn_bg_ex"
         android:text="@string/str_menu"
-        android:textStyle="bold"
-        android:id="@+id/btn_menu"/>
+        android:textStyle="bold" />
 
     <Button
-        android:layout_height="wrap_content"
+        android:id="@+id/btn_save"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/btn_menu"
         android:background="@drawable/btn_bg_ex"
         android:text="@string/str_save"
-        android:textStyle="bold"
-        android:id="@+id/btn_save"
-        android:layout_toLeftOf="@id/btn_menu"/>
+        android:textStyle="bold" />
 
     <EditText
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
         android:id="@+id/et_filename"
-        android:layout_above="@id/btn_menu"/>
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_menu" />
 
     <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:text="@string/str_filename"
-        android:textStyle="bold"
-        android:textSize="20dp"
         android:id="@+id/tv_filename"
-        android:layout_above="@id/et_filename"/>
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/et_filename"
+        android:text="@string/str_filename"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="fill_parent"
-        android:text="@string/str_editmemo"
-        android:textStyle="bold"
-        android:textSize="20dp"
         android:id="@+id/tv_editmemo"
-        android:layout_alignParentTop="true"/>
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="@string/str_editmemo"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <EditText
-        android:layout_height="fill_parent"
-        android:layout_width="fill_parent"
         android:id="@+id/et_edit"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:layout_above="@id/tv_filename"
-        android:scrollHorizontally="true"
+        android:layout_below="@id/tv_editmemo"
         android:scrollbars="vertical"
-        android:layout_below="@id/tv_editmemo"/>
+        android:scrollHorizontally="true" />
 
 </RelativeLayout>
