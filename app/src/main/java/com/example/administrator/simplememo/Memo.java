@@ -17,7 +17,7 @@ public class Memo extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main);
 
         ButtonProc(R.id.btn_new);
         ButtonProc(R.id.btn_open);

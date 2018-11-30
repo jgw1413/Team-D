@@ -6,8 +6,10 @@ import java.io.IOException;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.database.CursorJoiner;
 import android.os.Bundle;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -111,13 +113,19 @@ public class Edit extends Activity implements Variable {
         }
         Intent intent = new Intent(Edit.this, Message.class);
         intent.putExtra("MESSAGE", SAVE_COMPLETE);
-        startActivityForResult(intent, 0);
+        startActivityForResult(intent, 1);      // 저장한 내용 결과 값 리턴
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if( data.getAction().equals("ACTION_A")) {
-            finish();
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1){
+            if (resultCode == Activity.RESULT_OK){
+                Log.e("LOG", "결과 받기 성공");
+            }
         }
+        //if( data.getAction().equals("ACTION_A")) {
+        //    finish();
+        //}
     }
 
 
