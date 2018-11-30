@@ -40,7 +40,10 @@ public class Memo extends Activity {
                         startActivity(intent);
                         break;
                     case R.id.btn_exit:     // 앱 종료
-                       // finish();
+                        Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+                        homeIntent.addCategory(Intent.CATEGORY_HOME);
+                        homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(homeIntent);
                         break;
                 }
             }
