@@ -1,49 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#fffbf4">
+    android:background="#fffbf4"
+    android:padding="10dp">
+
     <Button
         android:id="@+id/btn_del"
-        android:text="@string/str_del"
-        android:background="@drawable/btn_bg_ex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        />
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_bg_ex"
+        android:text="@string/str_del" />
+
     <Button
         android:id="@+id/btn_edit"
-        android:text="@string/str_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/btn_bg_ex"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@id/btn_del"
-        />
+        android:background="@drawable/btn_bg_ex"
+        android:text="@string/str_edit" />
 
     <TextView
         android:id="@+id/tv_readFilename"
-        android:textSize="15dip"
-        android:textColor="#ffffff"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="10dip"
-        />
-
+        android:textColor="#767676"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/tv_memo"
-        android:background="#ffffff"
-        android:textColor="#000000"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@id/tv_readFilename"
         android:layout_above="@id/btn_edit"
+        android:layout_below="@id/tv_readFilename"
         android:layout_margin="10dip"
+        android:background="#f9f7f5"
         android:scrollbars="vertical"
-        />
+        android:textColor="#000000" />
+
 </RelativeLayout>
