@@ -53,11 +53,10 @@
             android:label="@string/str_warningTitle"
             android:theme="@android:style/Theme.Dialog">
 
+
             <intent-filter>
-                <action
-                    android:name="android.intent.action.MAIN" />
-                <category
-                    android:name="android.intent.category.LAUNCHER" />
+                <action android:name="andbook.example.implicitintents.TEST1"/>
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
 

@@ -48,7 +48,7 @@ public class Message extends Activity implements Variable{
             public void onClick(View v) {
                 switch(getValue){
                     case SAVE_COMPLETE:
-//		        	setResult(RESULT_OK, intent.setAction("ACTION_A"));
+    		        	//setResult(RESULT_OK, intent.setAction("ACTION_A"));
                         Intent intent = new Intent(Message.this, Memo.class);
                         startActivity(intent);
                         break;

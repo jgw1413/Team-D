@@ -66,8 +66,10 @@ public class Edit extends Activity implements Variable {
         EditText et = (EditText)findViewById(R.id.et_filename);
         String getFileName = et.getText().toString();
 
-        if(getFileName.equals("")) {             // 아무것도 안적고 세이브 했을 때
-            Intent intent = new Intent(Edit.this, Message.class);
+        if(getFileName.equals("")) {             // 파일이름 안적고 세이브 했을 때
+            //Intent intent = new Intent(Edit.this, Message.class);
+            Intent intent = new Intent();
+            intent.setAction("andbook.example.implicitintents.TEST1");
             intent.putExtra("MESSAGE", NO_NAME);
             startActivity(intent);
         }
@@ -84,8 +86,10 @@ public class Edit extends Activity implements Variable {
                     }
                 }
 
-                if(isAlreadyFile) {
-                    Intent intent = new Intent(Edit.this, Message.class);
+                if(isAlreadyFile) {     // 같은 이름의 파일이 존재 할 때
+                    //Intent intent = new Intent(Edit.this, Message.class);
+                    Intent intent = new Intent();
+                    intent.setAction("andbook.example.implicitintents.TEST1");
                     intent.putExtra("MESSAGE", ALREADY_FILE);
                     startActivity(intent);
                 }
@@ -111,21 +115,33 @@ public class Edit extends Activity implements Variable {
         catch (IOException e) {
             e.printStackTrace();
         }
-        Intent intent = new Intent(Edit.this, Message.class);
+        //Intent intent = new Intent(Edit.this, Message.class);
+        Intent intent = new Intent();
+        intent.setAction("andbook.example.implicitintents.TEST1");
         intent.putExtra("MESSAGE", SAVE_COMPLETE);
         startActivityForResult(intent, 1);      // 저장한 내용 결과 값 리턴
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 1){
-            if (resultCode == Activity.RESULT_OK){
-                Log.e("LOG", "결과 받기 성공");
+        //super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == 1) {
+            if (resultCode == Activity.RESULT_OK) {
+                String result = data.getStringExtra("result");
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra("result",result);
+                setResult(Activity.RESULT_OK,returnIntent);
+                finish();
+                //if (data.getAction().equals("ACTION_A")) {
+                //finish();
+                //}
+            }
+            else if (resultCode == Activity.RESULT_CANCELED) {
+                //만약 반환값이 없을 경우의 코드를 여기에 작성하세요.
+                Intent returnIntent = new Intent();
+                setResult(Activity.RESULT_CANCELED, returnIntent);
+                finish();
             }
         }
-        //if( data.getAction().equals("ACTION_A")) {
-        //    finish();
-        //}
     }
 
 
