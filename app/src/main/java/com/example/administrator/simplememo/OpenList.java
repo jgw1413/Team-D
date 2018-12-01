@@ -24,15 +24,10 @@ public class OpenList extends ListActivity implements Variable{
         if( fileList().length != 0 ) {
             mFileList = fileList();
             this.setListAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, mFileList));
-
         }
         else {
 
         }
-
-
-
-
     }
 
     byte[] buffer;
@@ -49,19 +44,16 @@ public class OpenList extends ListActivity implements Variable{
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){
 
-        if( data.getAction().equals("RESET")){
+        if(data.getAction().equals("RESET")) {
             mFileList = fileList();
             this.setListAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, mFileList));
 
-            //���� ����� Ȯ�ν����ֱ�.
             Intent intent = new Intent(OpenList.this, Message.class);
             intent.putExtra("MESSAGE", DEL_COMPLETE);
             intent.putExtra("DEL_OK", sReadFile[FILENAME]);
             startActivity(intent);
         }
-
     }
-
 
     public void setReadFile(int pos){
         sReadFile[FILENAME] = mFileList[pos];

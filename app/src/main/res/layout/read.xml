@@ -7,22 +7,13 @@
     android:padding="10dp">
 
     <Button
-        android:id="@+id/btn_del"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/btn_bg_ex"
-        android:text="@string/str_del" />
-
-    <Button
         android:id="@+id/btn_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@id/btn_del"
         android:background="@drawable/btn_bg_ex"
-        android:text="@string/str_edit" />
+        android:text="LIST" />
 
     <TextView
         android:id="@+id/tv_readFilename"
@@ -32,6 +23,15 @@
         android:layout_marginLeft="10dip"
         android:textColor="#767676"
         android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btn_del"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_bg_ex"
+        android:text="@string/str_del" />
 
     <TextView
         android:id="@+id/tv_memo"

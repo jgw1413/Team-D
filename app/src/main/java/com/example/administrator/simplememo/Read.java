@@ -26,7 +26,6 @@ public class Read extends Activity implements Variable{
         TextView tvContent = (TextView)findViewById(R.id.tv_memo);
         tvContent.setText(sGetValue[FILECONTENT]);
 
-
         Button btnDel = (Button)findViewById(R.id.btn_del);
         btnDel.setOnClickListener(new OnClickListener(){
 
@@ -39,19 +38,13 @@ public class Read extends Activity implements Variable{
 
         });
 
-
         Button btnEdit = (Button)findViewById(R.id.btn_edit);
-        btnEdit.setOnClickListener(new OnClickListener(){
+        btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Read.this, Edit.class);
-                intent.putExtra("isOpenEdit", true);
-                intent.putExtra("FILENAME", sGetValue[FILENAME]);
-                intent.putExtra("FILECONTENT", sGetValue[FILECONTENT]);
+                Intent intent = new Intent(Read.this, OpenList.class);
                 startActivity(intent);
             }
-
         });
     }
-
 }
